@@ -11,6 +11,7 @@ public class TesteGoogle {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com.br");
 		Assert.assertEquals("Google", driver.getTitle());
+		driver.quit();
 	}
 
 }
