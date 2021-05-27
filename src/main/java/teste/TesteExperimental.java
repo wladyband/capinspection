@@ -12,12 +12,14 @@ public class TesteExperimental {
 
 	
 	private WebDriver driver;
+	private DSL dsl;
 	
 	@Before
 	public void inicializarTestes() {
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://gtc02.tef.intra.rs.gov.br/pagina-inicial");
+		dsl = new DSL(driver);
 	}
 	
 	@After
@@ -28,8 +30,8 @@ public class TesteExperimental {
 	
 	@Test
 	public void deveEntrarLoginCidadao() {
-		driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-		Assert.assertEquals("Já tenho cadastro no Login Cidadão", driver.findElement(By.className("title")).getText());
+		dsl.clicarButtonXpath("//button[@class='btn btn-primary']");
+		Assert.assertEquals("Já tenho cadastro no Login Cidadão", dsl.obterTextoPelaTag("title"));
 	}
 
 }
