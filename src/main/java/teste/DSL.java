@@ -19,4 +19,16 @@ public class DSL {
 	public String obterTextoPelaTag(String id) {
 		return driver.findElement(By.className(id)).getText();
 	}
+	
+	public String obterTextoPorXpath(String xpath) {
+		return driver.findElement(By.xpath(xpath)).getAttribute("value");
+	}
+	
+	public void escreverPorXpath(String id_campo, String texto) {
+		driver.findElement(By.xpath(id_campo)).sendKeys(texto);
+	}
+	
+	public void escrever(String id_campo, String texto) {
+		driver.findElement(By.id(id_campo)).sendKeys(texto);
+	}
 }
