@@ -24,7 +24,7 @@ public class DSL {
 		getDriver().findElement(By.xpath(id_campo)).sendKeys(texto);
 	}
 	
-	public void escrever(String id_campo, String texto) {
+	public void escreverPorID(String id_campo, String texto) {
 		getDriver().findElement(By.id(id_campo)).sendKeys(texto);
 	}
 }
