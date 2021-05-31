@@ -1,9 +1,6 @@
 package br.com.capinspection.core;
 
-public class AcessoSistemaPage {
-	
-	
-	private DSL dsl;
+public class AcessoSistemaPage extends BasePage {
 
 	private static String      botaoPadrao                        = "//button[@class='btn btn-primary']";
 	private static String      textoPorXpathUserName              = "//input[@id='login_form_type_username']";
@@ -13,9 +10,6 @@ public class AcessoSistemaPage {
 	private static String      userNamePorXPath                   = "//input[@id='login_form_type_username']";
 	private static String      passwordPorID                      = "login_form_type_password";
 	
-	public AcessoSistemaPage() {
-		dsl = new DSL();
-	}
 
 	public void clicaBotao() {
 		dsl.clicarButtonXpath(botaoPadrao);

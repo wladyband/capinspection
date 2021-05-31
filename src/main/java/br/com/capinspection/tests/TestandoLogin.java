@@ -1,6 +1,6 @@
 package br.com.capinspection.tests;
 
-import static br.com.capinspection.core.DriverFactory.getDriver;
+import static br.com.capinspection.core.URLFactory.getURL;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -16,8 +16,6 @@ public class TestandoLogin extends BaseTest {
 
 	
 	private AcessoSistemaPage page;
-	
-	private static String acessoSiteGTC = "http://gtc02.tef.intra.rs.gov.br/pagina-inicial";
 
 	@Before
 	public void inicializarTestes() {
@@ -26,7 +24,7 @@ public class TestandoLogin extends BaseTest {
 
 	@Test
 	public void t1_deveClicarEntrarLoginCidadao() throws InterruptedException {
-		getDriver().get(acessoSiteGTC);
+		getURL();
 		page.clicaBotao();
 	}
 	

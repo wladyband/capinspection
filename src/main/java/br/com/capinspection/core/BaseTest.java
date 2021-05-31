@@ -17,7 +17,8 @@ public class BaseTest {
 
 	@Rule
 	public TestName testName = new TestName();
-
+	
+	
 	@After
 	public void finalizarTestes() throws IOException {
 		TakesScreenshot takesScreenshot = (TakesScreenshot) getDriver();
@@ -25,7 +26,7 @@ public class BaseTest {
 		FileUtils.copyFile(arquivo, new File(
 				"target" + File.separator + "screenshot" + File.separator + testName.getMethodName() + ".jpg"));
 
-		if (Propriedades.FECHAR_BROWSER) {
+		if (SwitchHubBrowser.FECHAR_BROWSER) {
 			killDriver();
 		}
 	}

@@ -14,7 +14,7 @@ public class DriverFactory {
 
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			switch (Propriedades.browser) {
+			switch (SwitchHubBrowser.browser) {
 			case FIREFOX:
 				System.setProperty("webdriver.gecko.driver", "src/main/resources/drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
@@ -38,5 +38,6 @@ public class DriverFactory {
 			driver = null;
 		}
 	}
+
 
 }
