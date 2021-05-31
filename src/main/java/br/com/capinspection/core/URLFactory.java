@@ -1,11 +1,15 @@
 package br.com.capinspection.core;
 
+import br.com.capinspection.core.SwitchHubURL.URL;
+
 public class URLFactory {
+	
+	
 	
 	private URLFactory() {
 	}
 
-	public static void getURL() {
+	public static URL getURL() {
 			switch (SwitchHubURL.uRL) {
 			case GTC:
 				DriverFactory.getDriver().get("http://gtc02.tef.intra.rs.gov.br/pagina-inicial");
@@ -15,6 +19,7 @@ public class URLFactory {
 				break;
 
 			}
+		return SwitchHubURL.uRL;
 		
 	}
 

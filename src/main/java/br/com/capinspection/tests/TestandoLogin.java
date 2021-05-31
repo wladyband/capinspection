@@ -10,6 +10,8 @@ import org.junit.runners.MethodSorters;
 
 import br.com.capinspection.core.AcessoSistemaPage;
 import br.com.capinspection.core.BaseTest;
+import br.com.capinspection.core.SwitchHubURL;
+import br.com.capinspection.core.SwitchHubURL.URL;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestandoLogin extends BaseTest {
@@ -30,10 +32,13 @@ public class TestandoLogin extends BaseTest {
 	
 	@Test
 	public void t2_deveInserirLoginCidadao() throws InterruptedException {
-		page.setUserNamePorXpath("727.585.220-98");
-		assertEquals("727.585.220-98", page.obterTextoPorXpathUserName());
-		page.clicarBotaoUserName();
-		Thread.sleep(300);
+		if(URL.GTC == SwitchHubURL.uRL ) {
+			page.setUserNamePorXpath("727.585.220-98");
+			assertEquals("727.585.220-98", page.obterTextoPorXpathUserName());
+			page.clicarBotaoUserName();
+			Thread.sleep(300);
+		}
+		
 	}
 	
 	@Test
