@@ -8,10 +8,11 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import br.com.capinspection.core.AcessoSistemaPage;
 import br.com.capinspection.core.BaseTest;
+import br.com.capinspection.core.SincronizarComponente;
 import br.com.capinspection.core.SwitchHubURL;
 import br.com.capinspection.core.SwitchHubURL.URL;
+import br.com.capinspection.pages.login.AcessoSistemaPage;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestandoLogin extends BaseTest {
@@ -33,18 +34,16 @@ public class TestandoLogin extends BaseTest {
 	@Test
 	public void t2_deveInserirLoginCidadao() throws InterruptedException {
 		if(URL.GTC == SwitchHubURL.uRL ) {
-			page.setUserNamePorXpath("727.585.220-98");
-			assertEquals("727.585.220-98", page.obterTextoPorXpathUserName());
+			page.setCPF("727.585.220-98");
 			page.clicarBotaoUserName();
-			Thread.sleep(300);
+			SincronizarComponente.sleep(300);
 		}
 		
 	}
 	
 	@Test
 	public void t2_deveInserirPasswordLoginCidadao() throws InterruptedException {
-		page.setPasswordPorID("PROCERGSRU1");
-		assertEquals("PROCERGSRU1", page.obterTextoPorIDPassword());
+		page.setPassword("PROCERGSRU1");
 		page.clicarBotaoPassword();
 	}
 	

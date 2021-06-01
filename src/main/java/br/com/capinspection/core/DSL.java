@@ -7,23 +7,15 @@ import org.openqa.selenium.By;
 
 public class DSL {
 	
-	public void clicarButtonXpath(String link) {
-		getDriver().findElement(By.xpath(link)).click();
+	public void clicarButton(By by) {
+		getDriver().findElement(by).click();
 	}
 	
-	public String obterTextoPelaTag(String id) {
-		return getDriver().findElement(By.className(id)).getText();
+	public String obterTexto(By by) {
+		return getDriver().findElement(by).getAttribute("value");
 	}
 	
-	public String obterTextoPorXpath(String xpath) {
-		return getDriver().findElement(By.xpath(xpath)).getAttribute("value");
-	}
-	
-	public void escreverPorXpath(String id_campo, String texto) {
-		getDriver().findElement(By.xpath(id_campo)).sendKeys(texto);
-	}
-	
-	public void escreverPorID(String id_campo, String texto) {
-		getDriver().findElement(By.id(id_campo)).sendKeys(texto);
+	public void escrever(By by, String texto) {
+		getDriver().findElement(by).sendKeys(texto);
 	}
 }
