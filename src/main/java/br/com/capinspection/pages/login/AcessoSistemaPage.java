@@ -31,7 +31,6 @@ public class AcessoSistemaPage extends BasePage {
 	}
 	
 	public void clicarBotaoPassword() {
-		
 		dsl.clicarButton(By.xpath(clicarBotaoPasswordXpath));
 	}
 	
@@ -43,6 +42,7 @@ public class AcessoSistemaPage extends BasePage {
 		return dsl.obterTexto(By.tagName("h1")).getText();
 	}
 	public String obterTituloGTCPorTag() {
+		esperaGTC();
 		 return dsl.obterTexto(By.tagName("h5")).getText();
  	}
 	

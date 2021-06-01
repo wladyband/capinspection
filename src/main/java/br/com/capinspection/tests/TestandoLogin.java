@@ -44,7 +44,6 @@ public class TestandoLogin extends BaseTest {
 	public void t2_deveInserirPasswordLoginCidadao() throws InterruptedException {
 		page.setPassword("PROCERGSRU1");
 		page.clicarBotaoPassword();
-		page.esperaGTC();
 		assertEquals("Importante:", page.obterTituloGTCPorTag());
 	}
 	
