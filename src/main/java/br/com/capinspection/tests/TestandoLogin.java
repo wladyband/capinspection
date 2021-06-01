@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.com.capinspection.core.BaseTest;
-import br.com.capinspection.core.SincronizarComponente;
 import br.com.capinspection.core.SwitchHubURL;
 import br.com.capinspection.core.SwitchHubURL.URL;
 import br.com.capinspection.pages.login.AcessoSistemaPage;
@@ -36,7 +35,7 @@ public class TestandoLogin extends BaseTest {
 		if(URL.GTC == SwitchHubURL.uRL ) {
 			page.setCPF("727.585.220-98");
 			page.clicarBotaoUserName();
-			SincronizarComponente.sleep(300);
+			assertEquals("Já tenho cadastro no Login Cidadão", page.obterTituloLoginCidadaoPorTag());
 		}
 		
 	}
@@ -45,6 +44,8 @@ public class TestandoLogin extends BaseTest {
 	public void t2_deveInserirPasswordLoginCidadao() throws InterruptedException {
 		page.setPassword("PROCERGSRU1");
 		page.clicarBotaoPassword();
+		page.esperaGTC();
+		assertEquals("Importante:", page.obterTituloGTCPorTag());
 	}
 	
 }

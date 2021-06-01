@@ -6,14 +6,12 @@ import br.com.capinspection.core.BasePage;
 
 public class AcessoSistemaPage extends BasePage {
 	
-	
-
-	private static String      botaoPadrao                        = "//button[@class='btn btn-primary']";
-	private static String      textoPorXpathUserName              = "//input[@id='login_form_type_username']";
-	private static String      clicarBotaoUserNameXpath           = "(//button)[1][@class='btn btn-block btn-success']";
-	private static String      clicarBotaoPasswordXpath           = "(//button)[2][@class='btn btn-block btn-success']";
-	private static String      userNamePorXPath                   = "//input[@id='login_form_type_username']";
-	private static String      passwordPorID                      = "login_form_type_password";
+	private static final String      botaoPadrao                        = "//button[@class='btn btn-primary']";
+	private static final String      textoPorXpathUserName              = "//input[@id='login_form_type_username']";
+	private static final String      clicarBotaoUserNameXpath           = "(//button)[1][@class='btn btn-block btn-success']";
+	private static final String      clicarBotaoPasswordXpath           = "(//button)[2][@class='btn btn-block btn-success']";
+	private static final String      userNamePorXPath                   = "//input[@id='login_form_type_username']";
+	private static final String      passwordPorID                      = "login_form_type_password";
 	
 
 	public void clicaBotao() {
@@ -33,13 +31,23 @@ public class AcessoSistemaPage extends BasePage {
 	}
 	
 	public void clicarBotaoPassword() {
+		
 		dsl.clicarButton(By.xpath(clicarBotaoPasswordXpath));
 	}
 	
 	public String obterTextoPorXpathUserName() {
-		return dsl.obterTexto(By.xpath(textoPorXpathUserName));
+		return dsl.obterTexto(By.xpath(textoPorXpathUserName)).getAttribute("value");
 	}
 	
+	public String obterTituloLoginCidadaoPorTag() {
+		return dsl.obterTexto(By.tagName("h1")).getText();
+	}
+	public String obterTituloGTCPorTag() {
+		 return dsl.obterTexto(By.tagName("h5")).getText();
+ 	}
 	
-	
+	public void esperaGTC() {
+		dsl.esperaSugestivaGenerica(10, By.xpath("(//button)[8][@class='btn btn-sm btn-primary']"));
+		
+	}
 }
