@@ -8,10 +8,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.capinspection.tests.gtc.AcessandoGTCLoginTest;
-import br.com.capinspection.tests.solcbm.AcessandoSOLCBMLoginTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ AcessandoGTCLoginTest.class, AcessandoSOLCBMLoginTest.class })
+@SuiteClasses({ AcessandoGTCLoginTest.class})
 public class SuiteGeral {
 
 	@AfterClass

@@ -15,39 +15,39 @@ public class AcessoSistemaGTCPage extends BasePage {
 	
 
 	public void clicaBotao() {
-		dsl.clicarButton(By.xpath(botaoPadrao));
+		clicarButton(By.xpath(botaoPadrao));
 	}
 			
 	public void setCPF(String login) {
-		dsl.escrever(By.xpath(userNamePorXPath), login);
+		escrever(By.xpath(userNamePorXPath), login);
 	}
 	
 	public void setPassword(String password) {
-		dsl.escrever(By.id(passwordPorID), password);
+		escrever(By.id(passwordPorID), password);
 	}
 	
 	public void clicarBotaoUserName() {
-		dsl.clicarButton(By.xpath(clicarBotaoUserNameXpath));
+		clicarButton(By.xpath(clicarBotaoUserNameXpath));
 	}
 	
 	public void clicarBotaoPassword() {
-		dsl.clicarButton(By.xpath(clicarBotaoPasswordXpath));
+		clicarButton(By.xpath(clicarBotaoPasswordXpath));
 	}
 	
 	public String obterTextoPorXpathUserName() {
-		return dsl.obterTexto(By.xpath(textoPorXpathUserName)).getAttribute("value");
+		return obterTexto(By.xpath(textoPorXpathUserName)).getAttribute("value");
 	}
 	
 	public String obterTituloLoginCidadaoPorTag() {
-		return dsl.obterTexto(By.tagName("h1")).getText();
+		return obterTexto(By.tagName("h1")).getText();
 	}
 	public String obterTituloGTCPorTag() {
 		esperaGTC();
-		 return dsl.obterTexto(By.tagName("h5")).getText();
+		 return obterTexto(By.tagName("h5")).getText();
  	}
 	
 	public void esperaGTC() {
-		dsl.esperaSugestivaGenerica(10, By.xpath("(//button)[8][@class='btn btn-sm btn-primary']"));
+		esperaSugestivaGenerica(10, By.xpath("(//button)[8][@class='btn btn-sm btn-primary']"));
 		
 	}
 }
