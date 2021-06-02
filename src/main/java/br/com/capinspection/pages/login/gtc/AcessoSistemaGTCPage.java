@@ -1,10 +1,10 @@
-package br.com.capinspection.pages.login;
+package br.com.capinspection.pages.login.gtc;
 
 import org.openqa.selenium.By;
 
 import br.com.capinspection.core.BasePage;
 
-public class AcessoSistemaPage extends BasePage {
+public class AcessoSistemaGTCPage extends BasePage {
 	
 	private static final String      botaoPadrao                        = "//button[@class='btn btn-primary']";
 	private static final String      textoPorXpathUserName              = "//input[@id='login_form_type_username']";

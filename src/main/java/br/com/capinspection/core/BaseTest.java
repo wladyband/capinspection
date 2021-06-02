@@ -1,5 +1,6 @@
 package br.com.capinspection.core;
 
+
 import static br.com.capinspection.core.DriverFactory.getDriver;
 import static br.com.capinspection.core.DriverFactory.killDriver;
 

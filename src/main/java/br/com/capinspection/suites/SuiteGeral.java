@@ -7,12 +7,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import br.com.capinspection.tests.TestandoLogin;
+import br.com.capinspection.tests.gtc.AcessandoGTCLoginTest;
+import br.com.capinspection.tests.solcbm.AcessandoSOLCBMLoginTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ TestandoLogin.class })
+@SuiteClasses({ AcessandoGTCLoginTest.class, AcessandoSOLCBMLoginTest.class })
 public class SuiteGeral {
-	
+
 	@AfterClass
 	public static void finalizarTudo() {
 		killDriver();
