@@ -9,15 +9,29 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import br.com.capinspection.pages.login.gtc.AcessoSistemaGTCPage;
+
 public class BaseTest {
 
 	@Rule
 	public TestName testName = new TestName();
+	
+	private AcessoSistemaGTCPage page = new AcessoSistemaGTCPage();
+	
+	@Before
+	public void inicializar() throws InterruptedException {
+		page.acessarTelaInicial();
+		page.inserirCPF();
+		page.inserirPassword();
+		
+	}
+	
 	
 	
 	@After

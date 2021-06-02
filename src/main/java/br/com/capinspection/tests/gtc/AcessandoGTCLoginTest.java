@@ -22,23 +22,8 @@ public class AcessandoGTCLoginTest extends BaseTest {
 
 	@Test
 	public void t1_deveClicarEntrarLoginCidadaoGTC() throws InterruptedException {
-			page.clicaBotao();
+		assertEquals("Já tenho cadastro no Login Cidadão", page.obterTituloLoginCidadaoPorTag());
+		assertEquals("Importante:", page.obterTituloGTCPorTag());
 	}
 
-	@Test
-	public void t2_deveInserirLoginCidadaoGTC() throws InterruptedException {
-		
-			page.setCPF("727.585.220-98");
-			page.clicarBotaoUserName();
-			assertEquals("Já tenho cadastro no Login Cidadão", page.obterTituloLoginCidadaoPorTag());
-		
-	}
-
-	@Test
-	public void t2_deveInserirPasswordLoginCidadaoGTC() throws InterruptedException {
-			page.setPassword("PROCERGSRU1");
-			page.clicarBotaoPassword();
-			assertEquals("Importante:", page.obterTituloGTCPorTag());
-		
-	}
 }
