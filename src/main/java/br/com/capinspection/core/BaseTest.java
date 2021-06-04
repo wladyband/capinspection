@@ -1,6 +1,5 @@
 package br.com.capinspection.core;
 
-
 import static br.com.capinspection.core.DriverFactory.getDriver;
 import static br.com.capinspection.core.DriverFactory.killDriver;
 
@@ -21,18 +20,19 @@ public class BaseTest {
 
 	@Rule
 	public TestName testName = new TestName();
-	
+
 	private AcessoSistemaGTCPage page = new AcessoSistemaGTCPage();
-	
+
 	@Before
 	public void inicializar() throws InterruptedException {
-		page.acessarTelaInicial();
-		page.inserirCPF();
-		page.clicarBotaoUserName();
-		page.inserirPassword();
-		page.clicarBotaoPassword();
+		if (Propriedades.Sistemas.GTC == Propriedades.sistemas) {
+			page.acessarTelaInicialGTC();
+		
+		} else {
+			page.acessarTelaInicialGTC();
+		}
 	}
-	
+
 	@After
 	public void finalizarTestes() throws IOException {
 		TakesScreenshot takesScreenshot = (TakesScreenshot) getDriver();
