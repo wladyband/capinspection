@@ -8,7 +8,7 @@ import br.com.capinspection.core.BasePage;
 
 public class AcessoSistemaGTCPage extends BasePage {
 	
-	private static String            acessoSiteGTC                      = "http://gtc02.tef.intra.rs.gov.br/pagina-inicial";
+	private static final String      acessoSiteGTC                      = "http://gtc02.tef.intra.rs.gov.br/pagina-inicial";
 	private static final String      botaoPadrao                        = "//button[@class='btn btn-primary']";
 	private static final String      textoPorXpathUserName              = "//input[@id='login_form_type_username']";
 	private static final String      clicarBotaoUserNameXpath           = "(//button)[1][@class='btn btn-block btn-success']";
@@ -39,7 +39,8 @@ public class AcessoSistemaGTCPage extends BasePage {
 		clicarButton(By.xpath(clicarBotaoUserNameXpath));
 	}
 	
-	public void clicarBotaoPassword() {
+	public void clicarBotaoPassword() throws InterruptedException {
+		Thread.sleep(300);
 		clicarButton(By.xpath(clicarBotaoPasswordXpath));
 	}
 	
@@ -61,11 +62,9 @@ public class AcessoSistemaGTCPage extends BasePage {
 	
 	public void inserirCPF() {
 		setCPF("727.585.220-98");
-		clicarBotaoUserName();
 	}
 	
 	public void inserirPassword() throws InterruptedException {
 		setPassword("PROCERGSRU1");
-		clicarBotaoPassword();
 	}
 }

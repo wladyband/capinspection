@@ -15,14 +15,14 @@ public class AcessandoGTCLoginTest extends BaseTest {
 
 	private AcessoSistemaGTCPage page;
 
+	
 	@Before
 	public void inicializarTestes() {
 		page = new AcessoSistemaGTCPage();
 	}
 
 	@Test
-	public void t1_deveClicarEntrarLoginCidadaoGTC() throws InterruptedException {
-		assertEquals("Já tenho cadastro no Login Cidadão", page.obterTituloLoginCidadaoPorTag());
+	public void t1_analiseAcessoSistemaGTC() throws InterruptedException {
 		assertEquals("Importante:", page.obterTituloGTCPorTag());
 	}
 

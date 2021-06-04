@@ -1,6 +1,6 @@
 package br.com.capinspection.core;
 
-public class SwitchHubBrowser {
+public class Propriedades {
 
 	public static boolean FECHAR_BROWSER = false;
 

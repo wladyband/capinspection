@@ -28,11 +28,10 @@ public class BaseTest {
 	public void inicializar() throws InterruptedException {
 		page.acessarTelaInicial();
 		page.inserirCPF();
+		page.clicarBotaoUserName();
 		page.inserirPassword();
-		
+		page.clicarBotaoPassword();
 	}
-	
-	
 	
 	@After
 	public void finalizarTestes() throws IOException {
@@ -41,7 +40,7 @@ public class BaseTest {
 		FileUtils.copyFile(arquivo, new File(
 				"target" + File.separator + "screenshot" + File.separator + testName.getMethodName() + ".jpg"));
 
-		if (SwitchHubBrowser.FECHAR_BROWSER) {
+		if (Propriedades.FECHAR_BROWSER) {
 			killDriver();
 		}
 	}
