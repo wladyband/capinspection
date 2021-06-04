@@ -27,9 +27,9 @@ public class BaseTest {
 	public void inicializar() throws InterruptedException {
 		if (Propriedades.Autenticacao.GTC == Propriedades.sistema) {
 			page.acessarTelaInicialGTC();
-			page.inserirCPF();
+			page.setCPF("727.585.220-98");
 			page.clicarBotaoUserName();
-			page.inserirPassword();
+			page.setPassword("PROCERGSRU1");
 			page.clicarBotaoPassword();
 		
 		} else {

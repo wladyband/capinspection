@@ -7,7 +7,7 @@ public class Propriedades {
 
 	public static Browsers browser = Browsers.CHROME;
 
-	public static Autenticacao sistema = Autenticacao.SOE;
+	public static Autenticacao sistema = Autenticacao.GTC;
 
 	public enum Browsers {
 		CHROME, FIREFOX, IE

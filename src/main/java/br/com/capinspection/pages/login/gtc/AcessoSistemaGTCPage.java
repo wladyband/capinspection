@@ -30,7 +30,6 @@ public class AcessoSistemaGTCPage extends BasePage {
 	
 	public void acessarTelaInicialSOE() {
 		getDriver().get(acessoSiteSOE);
-	
 	}
 	
 	public void clicaBotao() {
@@ -70,12 +69,5 @@ public class AcessoSistemaGTCPage extends BasePage {
 	public void esperaGTC(int valor) {
 		esperaSugestivaGenerica(valor, By.xpath("(//button)[8][@class='btn btn-sm btn-primary']"));
 	}
-	
-	public void inserirCPF() {
-		setCPF("727.585.220-98");
-	}
-	
-	public void inserirPassword() throws InterruptedException {
-		setPassword("PROCERGSRU1");
-	}
+
 }
