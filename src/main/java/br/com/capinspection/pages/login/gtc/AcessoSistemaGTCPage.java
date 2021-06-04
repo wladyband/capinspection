@@ -30,7 +30,7 @@ public class AcessoSistemaGTCPage extends BasePage {
 	
 	public void acessarTelaInicialSOE() {
 		getDriver().get(acessoSiteSOE);
-		clicaBotao();
+	
 	}
 	
 	public void clicaBotao() {

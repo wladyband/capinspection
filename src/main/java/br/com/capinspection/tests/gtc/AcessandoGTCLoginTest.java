@@ -23,11 +23,7 @@ public class AcessandoGTCLoginTest extends BaseTest {
 
 	@Test
 	public void t1_analiseAcessoSistemaGTC() throws InterruptedException {
-		if (Propriedades.Sistemas.GTC == Propriedades.sistemas) {
-			page.inserirCPF();
-			page.clicarBotaoUserName();
-			page.inserirPassword();
-			page.clicarBotaoPassword();
+		if (Propriedades.Autenticacao.GTC == Propriedades.sistema) {
 			assertEquals("Importante:", page.obterTituloGTCPorTag());
 		} else {
 			System.out.println("entrou");

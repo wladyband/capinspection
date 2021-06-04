@@ -25,11 +25,15 @@ public class BaseTest {
 
 	@Before
 	public void inicializar() throws InterruptedException {
-		if (Propriedades.Sistemas.GTC == Propriedades.sistemas) {
+		if (Propriedades.Autenticacao.GTC == Propriedades.sistema) {
 			page.acessarTelaInicialGTC();
+			page.inserirCPF();
+			page.clicarBotaoUserName();
+			page.inserirPassword();
+			page.clicarBotaoPassword();
 		
 		} else {
-			page.acessarTelaInicialGTC();
+			page.acessarTelaInicialSOE();
 		}
 	}
 

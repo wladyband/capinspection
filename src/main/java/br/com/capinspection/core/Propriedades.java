@@ -2,17 +2,18 @@ package br.com.capinspection.core;
 
 public class Propriedades {
 
+
 	public static boolean FECHAR_BROWSER = false;
 
 	public static Browsers browser = Browsers.CHROME;
 
-	public static Sistemas sistemas = Sistemas.SOE;
+	public static Autenticacao sistema = Autenticacao.SOE;
 
 	public enum Browsers {
 		CHROME, FIREFOX, IE
 	}
 
-	public enum Sistemas {
+	public enum Autenticacao {
 		SOE, GTC
 	}
 }
