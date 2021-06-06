@@ -21,6 +21,9 @@ public class AcessoSistemaGTCPage extends BasePage {
 	private static final String      clicarBotaoPasswordXpath           = "(//button)[2][@class='btn btn-block btn-success']";
 	private static final String      userNamePorXPath                   = "//input[@id='login_form_type_username']";
 	private static final String      passwordPorID                      = "login_form_type_password";
+	private static final String      matriculaID                        = "matricula";
+	private static final String      organizacaoID                      = "organizacao"; 
+	private static final String      senhaID                            = "senha"; 
 	
 
 	public void acessarTelaInicialGTC() {
@@ -45,6 +48,22 @@ public class AcessoSistemaGTCPage extends BasePage {
 		escrever(By.id(passwordPorID), password);
 	}
 	
+	public void setOrganizacaoSOE(String organizacao) {
+		escrever(By.id(organizacaoID), organizacao);
+	} 
+	
+	public void setNumeroMatriculaSOE(String numeroMatricula) {
+		escrever(By.id(matriculaID), numeroMatricula);
+	}
+	
+	public void setSenhaSOE(String senha) {
+		escrever(By.id(senhaID), senha);
+	}
+	
+	public void clicaBotaoSOE() {
+		clicarButton(By.id("btnLogonOrganizacao"));
+	}
+	
 	public void clicarBotaoUserName() {
 		clicarButton(By.xpath(clicarBotaoUserNameXpath));
 	}
@@ -52,6 +71,10 @@ public class AcessoSistemaGTCPage extends BasePage {
 	public void clicarBotaoPassword() throws InterruptedException {
 		Thread.sleep(300);
 		clicarButton(By.xpath(clicarBotaoPasswordXpath));
+	}
+	
+	public String obterTextoPorTagSOE() {
+		return obterTexto(By.tagName("h3")).getText();
 	}
 	
 	public String obterTextoPorXpathUserName() {
